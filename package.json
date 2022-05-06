@@ -4,7 +4,8 @@
   "description": "some methods",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx only-allow pnpm"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/melodyfang/utils/issues"
   },
-  "homepage": "https://github.com/melodyfang/utils#readme"
+  "homepage": "https://github.com/melodyfang/utils#readme",
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
 }
