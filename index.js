@@ -1,5 +1,4 @@
 export { checkGeekbangDomain } from './src/checkGeekbangDomain'
-export { copyHandler } from './src/copyHandler'
 export { cutStr } from './src/cutStr'
 export { date } from './src/date'
 export { getTrueLength } from './src/getTrueLength'
