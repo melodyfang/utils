@@ -1,11 +1,13 @@
 {
-  "name": "fresh-utils",
-  "version": "1.0.0",
+  "name": "melody-utils",
+  "version": "1.0.2",
   "description": "some methods",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "cp package.json README.md dist",
+    "build": "rollup -c && npm run copy",
+    "publish": "node scripts/publish.js",
     "preinstall": "npx only-allow pnpm"
   },
   "repository": {
@@ -25,5 +27,14 @@
   "homepage": "https://github.com/melodyfang/utils#readme",
   "dependencies": {
     "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "commander": "^9.3.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.26.0",
+    "rollup": "^2.75.7",
+    "shelljs": "^0.8.5"
   }
 }

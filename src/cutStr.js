@@ -2,11 +2,11 @@ import { subString } from './subString'
 
 /**
  * 超过指定字符后进行截断，显示 ...
- * @param {*} str 
- * @param {*} len 
- * @returns 
+ * @param {*} str
+ * @param {*} len
+ * @returns
  */
-export function cutStr (str, len) {
+export function cutStr (str, len){
   if (!str) {
     return ''
   }
