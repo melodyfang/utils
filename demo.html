@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body {
+      padding-top: 400px;
+      height: 2000px;
+    }
+
+    #box1 {
+      width: 200px;
+      height: 200px;
+      background: rgb(148, 197, 214);
+    }
+
+    #box2 {
+      margin-top: 200px;
+      width: 200px;
+      height: 200px;
+      background: lightsalmon;
+    }
+
+    .box {
+      width: 100%;
+      height: 80px;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .list {
+      width: 900px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      background: lightsalmon;
+    }
+
+    .item {
+      margin: 0 10px;
+      font-size: 13px;
+      color: #353535;
+      white-space: nowrap;
+      background: lightsalmon;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="box1">box1</div>
+  <div id="box2">盒子2</div> -->
+  <div class="box">
+    <div class="list">
+      <div class="item">战马，站啊，雇佣者，致那黑夜中的无言语</div>
+      <div class="item">今天下大暴雨，啥时候晴天</div>
+      <div class="item">吃的饱饱的，明天少吃点</div>
+    </div>
+  </div>
+  <script>
+    let io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        // console.log('第1个观察器: ', entry.target.innerHTML, entry.isIntersecting);
+
+        if (entry.isIntersecting) {
+          entry.target.stime = Date.now()
+        } else {
+          if (entry.target.stime) {
+            entry.target.duration = Date.now() - entry.target.stime
+            console.log('duration: ', entry.target.innerHTML, entry.target.duration)
+          }
+        }
+      })
+    })
+
+    // let io2 = new IntersectionObserver((entries, observer) => {
+    //   entries.forEach(entry => {
+    //     console.log('第2个观察器: ', entry.target.innerHTML, entry.isIntersecting);
+    //   })
+    // }, {
+
+    // })
+
+    let els = document.querySelectorAll('.item')
+
+    els.forEach(el => {
+      io.observe(el)
+    })
+
+  </script>
+</body>
+</html>

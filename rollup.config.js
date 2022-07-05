@@ -1,21 +1,25 @@
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import babel from '@rollup/plugin-babel'
+
+const pkg = require('./package.json')
 
 export default {
   input: 'src/index.js',
   output: [
     {
-      file: './dist/index.esm.js',
+      file: pkg.module,
       format: 'es'
     },
     {
-      file: './dist/index.cjs.js',
+      file: pkg.main,
       format: 'cjs'
     }
   ],
-  external: ['lodash-es'],
+  external: ['the-answer'],
   plugins: [
     resolve(),
-    commonjs()
+    commonjs(),
+    babel()
   ]
 }

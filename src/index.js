@@ -10,7 +10,11 @@ export { isRealHeightMoreThanVisibleHeight } from './isRealHeightMoreThanVisible
 export { offset } from './offset'
 export { subString } from './subString'
 
+import demo from './demo'
 
-import { isArray } from 'lodash-es'
+export { demo }
+
+// import { isArray } from 'lodash-es'
 
 // isArray()
+
